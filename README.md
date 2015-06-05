@@ -1,2 +1,4 @@
-# grascore
-Score grammars extracted with grex
+grascore
+========
+
+Scores, filters, prunes, and manipulates SCFG rules extracted with Grex
