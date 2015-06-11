@@ -86,12 +86,13 @@ while(my $line = <STDIN>)
     foreach my $i (0..$#Scores)
     {
 	# cdec uses negative logs for feature values, but don't convert
-	# binary, entropy, or gain/loss features
+	# binary, entropy, perplexity, or gain/loss features
 	# (because that would take the log of 0):
 	my $scoreOut = $Scores[$i];
 	unless((!$TAKE_LOG) ||
 	       (substr($ScoreNames[$i], -1) eq "?") ||
 	       (substr($ScoreNames[$i], 0, 8) eq "entropy-") ||
+	       (substr($ScoreNames[$i], 0, 11) eq "perplexity-") ||
 	       (substr($ScoreNames[$i], 0, 5) eq "gain-") ||
 	       (substr($ScoreNames[$i], 0, 5) eq "loss-"))
 	{

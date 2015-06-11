@@ -15,7 +15,7 @@ if($#ARGV != 0)
 
 # Global constants and parameters:
 my $COUNT_SNAME = "count";
-my $HLHS_SNAME = "entropy-lhsGrhs";
+my $PPLHS_SNAME = "perplexity-lhsGrhs";
 my $SN_FILE = $ARGV[0];
 
 # Read in list of score names already in rules:
@@ -110,5 +110,5 @@ if($totalCount > 0)
 
 # Write out new list of score names:
 open($FILE, "> $SN_FILE.new") or die "Can't open output file $SN_FILE.new: $!";
-print $FILE "@ScoreNames $HLHS_SNAME\n";
+print $FILE "@ScoreNames $PPLHS_SNAME\n";
 close($FILE);
